@@ -19,13 +19,13 @@ var doubleNumberValue: Double? = nil
  - Experiment:
  Declare a non-optional variable of a `String` and set it to `nil`. What happens?
  */
-
+//var person: String = nil
 
 /*:
  - Experiment:
  Declare an optional variable of a type `String` and set an initial `String` value to it. Then set it to `nil` on the next line. Does this work? Why or why not?
  */
-
+var yourName : String? = nil
 
 /*:
  Let's consider multiplying two numbers together that are of different types. Since we have a `Double` and an `Int`, we need to convert the two numbers to the same type. For example, creating a new `Double` using an `Int`.
@@ -42,18 +42,22 @@ ratio * convertIntegerValue // now this works!
 /*:
  Now let's say I have a `String` that contains digits and I want to use the numbered value of the `String` to multiply with another `Double`.
  */
+var thisNum = 4.00
+var thisNum2 = "4"
+var converStringValue = Double(thisNum2)
+thisNum + converStringValue!
 
 /*:
  - Experiment:
  Declare a `String` containing digits and try converting it to a `Double` the same way shown in the above example. What do you notice about the variable type? Hint: Use 'Option' + Mouse Click on the variable to see the type
  */
-
+var longString = "44444"
 
 /*:
  - Experiment:
  With your newly converted `Double` from a `String`, try multiplying it with the 'ratio' variable. What happens?
  */
-
+ratio * converStringValue!
 
 /*:
  Your newly converted `Double` value is a `Double?` which indicates we might have a double or we might have nothing.  Converting a `String` to a `Double` might fail because the `String` does not guarantee there will only be digits within it.
@@ -77,23 +81,23 @@ print("\(myOptionalDouble!)")
   - Experiment:
  Now you try! Try printing out your converted `Double?` with a force unwrap
 */
-
+print("\(converStringValue!)")
 
 
 /*:
  - Experiment:
  Go back and change your `String` to something that has no digits. What happens and why?
  */
-
-
-
+////converStringValue  = "hey"
+///print("\(converStringValue!)")
 /*:
  - Experiment:
  Declare an optional variable of a type `String` and set an initial `String` value to it. Try printing it.
  Now print it again, but this time unwrap the optional variable using the `'!'`. What's different about the two lines you printed?
  */
-
-
+var schoolName1: String? = "Harvard"
+print("\(schoolName1!)")
+/////without the ! it will print "optional" in front of harvar
 /*:
  - Experiment:
  Try setting an optional `String` variable to a non-optional `String` variable. What happens? What can you do to prevent the compiler from throwing an error?
@@ -150,3 +154,6 @@ if let unwrapped = gravityConstant {
     Try printing a car's price using a name that doesn't exist.
 */
 //: [Next](@next)
+
+var cars = ["Mazda3" : 50000, "CRV" : 60000, "Hummer" : 100000]
+print("\(cars)")

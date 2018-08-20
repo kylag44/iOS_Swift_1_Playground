@@ -19,8 +19,13 @@ myDictionary["Principal"] = 1
  - Experiment:
  Try creating an array and dictionary using `'let'` vs `'var'` then try adding something to them. What do you notice? For the array, you can use a method called 'append' to add something to it.
  */
-
-
+var myStringArray = ["How", "You", "Doin"]
+print("the string at index 2 is: \(myStringArray[2])")
+var fridgeContents = ["Apple" : 3, "Yogurt" : 7, "Pie" : 1]
+myStringArray.append("honey")
+print("my array is \(myStringArray)")
+fridgeContents["Pickles"] = 4
+fridgeContents 
 /*:
  - Experiment:
  Try creating an empty array with an explicit type `[type]`. What happens when you add a value that isn't the same type?
@@ -43,8 +48,14 @@ myDictionary["Principal"] = 1
  - reverse
  - count
  */
-
-
+myStringArray.append("bunch")
+myStringArray.insert("Hello", at: 0)
+print("\(myStringArray)")
+myStringArray.remove(at: 0)
+myStringArray.reverse()
+print("\(myStringArray.count)")
+myStringArray.removeAll()
+print("\(myStringArray)")
 /*:
  - Experiment:
  Create a dictionary with any values of your choice. Play around with accessing a value by its key. Try keys using different case sensitivity, what happens? Then try playing with the following methods of a dictionary and find out what they do:
@@ -52,7 +63,7 @@ myDictionary["Principal"] = 1
  - isEmpty
  - count
  */
-
+print("\(fridgeContents.count)")
 
 /*:
  - Callout(Challenge):
@@ -60,8 +71,13 @@ myDictionary["Principal"] = 1
  
     Finally, print out each person's name from the array using their index and string interpolation
 */
-
-
+var goodNames = [String]()
+goodNames.append("John")
+goodNames.append("Karen")
+goodNames.append("Jane")
+print("The name at index 0 is:\(goodNames[0])")
+print("The name at index 1 is:\(goodNames[1])")
+print("The name at index 2 is:\(goodNames[2])")
 /*:
  - Callout(Challenge):
   Declare a mutable dictionary with the following names and their salaries
@@ -75,5 +91,7 @@ myDictionary["Principal"] = 1
     On the next line, add this last person's info: Bob - $45000
  */
 
-
+var salaryDictionary = ["John" : 50000, "Jane" : 70000, "Karen" : 62000]
+salaryDictionary["Bob"] = 45000
+print("\(salaryDictionary)")
 //: [Next](@next)

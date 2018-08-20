@@ -42,11 +42,8 @@ func sayHello(toPerson: String) -> String{
  - Experiment:
  Try calling all of the functions above. They all have the same function name, but the compiler doesn't complain. Can you think of why this might be?
  */
+sayHello()
 
-/*:
- - Experiment:
- Try creating your own function that accepts two parameters of any type you choose. Have the function print out the two parameters and test your function.
- */
 
 /*:
  - Callout(Challenge):
@@ -54,11 +51,31 @@ func sayHello(toPerson: String) -> String{
  
  */
 
+func addTwoInts(_ a: Int, _ b: Int) -> Int {
+  return a + b
+}
+print(addTwoInts(6, 2))
+
+func subtractTwoInts(_ a: Int, _ b: Int) -> Int {
+  return a - b
+}
+print(subtractTwoInts(10, 5))
+
+func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
+  return a * b
+}
+print(multiplyTwoInts(10, 10))
+
+func divideTwoInts(_ a: Int, _ b: Int) -> Int {
+  return a / b
+}
+print(divideTwoInts(50, 2))
 /*:
  - Callout(Challenge):
  Create your own 'reverse' function that takes in an array of Int, reverses the order of the array, and returns the newly reversed array of Int. The array class has its own 'reverse' method, but do not use it for this challenge.
  */
-
+var myArray = [1,2,3,4,5,6]
+print("\(myArray.reversed())")
 /*:
  ## Closures
  
@@ -117,12 +134,15 @@ var sayHelloClosureWithReturn = { (name: String) -> String in
  - Experiment:
  Try calling all of the closures above. What do you notice that is different from calling a function?
  */
-
+sayHelloClosureWithReturn
 /*:
  - Experiment:
  Try creating your own closure that accepts two parameters of any type you choose. Have the closure print out the two parameters and test your closure.
  */
-
+var thisIsMyClosure = { (name: String), (fan: String) -> String Int
+  return "\(name) is a fan of \(fan)"
+}
+thisIsMyClosure
 /*:
  - Experiment:
  Declare a variable with an explicit closure type: `(String) -> (String)`. This closure type says it takes one parameter of type String and returns a variable of type String.
@@ -133,3 +153,4 @@ var sayHelloClosureWithReturn = { (name: String) -> String in
  Create a closure with at least two parameters of your choice and decide whether or not it returns anything. Then create a function that takes in your closure as a parameter and one additional parameter of your choice.
  */
 //: [Next](@next)
+

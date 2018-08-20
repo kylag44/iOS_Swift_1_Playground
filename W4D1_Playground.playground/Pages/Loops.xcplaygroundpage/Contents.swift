@@ -29,20 +29,28 @@ for i in 2...5 {
  - Experiment:
  What's the difference between `2...5` vs `2..<5`?
  */
-
+for i in 2..<5 {
+  print("My current Index : \(i)")
+}
 
 /*:
  - Experiment:
   Use a ranged for loop to search through the 'pets' array above for the word 'pig' and print out its index.
  */
-
+for i in 0...3 {
+  if pets[i] == "pig" {
+    print("index:\(i): pet: \(pets[i])")
+  }
+}
 
 /*:
  - Experiment:
  Create an array of random numbers of your choosing then make a for loop that adds 1 to each number.
  */
-
-
+var thisArray = [1,2,3,4,5]
+for i in 0...4 {
+  print("\(thisArray[i] + 1)")
+}
 /*:
  - Experiment:
  Take a look at the example below. Modify the code so that it searches for both the largest and smallest number. Then print out the result.
@@ -67,12 +75,26 @@ for (_, numbers) in interestingNumbers {
 }
 print(largest)
 
-
+var smallest = 1
+for (_, numbers) in interestingNumbers {
+  for number in numbers {
+    if number < smallest {
+      smallest = number
+    }
+  }
+}
+print(smallest)
 /*:
  - Callout(Challenge):
  Given a number `N`, from 0 to `N`, add up all the odd numbers and print out the result.
  ie: N = 5, 1+3+5 = 9
  */
+for n in 1...10 {
+  if n % 2 != 0 {
+    print("\(n + n)")
+  }
+}
+
 
 
 /*:
@@ -88,6 +110,15 @@ print(largest)
  3: Occurs 2 times
  */
 
-let numberArray = [1, 4, 5, 5, 5, 3, 2, 1, 4, 2, 2, 2, 1]
+var numberArray = [1, 4, 5, 5, 5, 3, 2, 1, 4, 2, 2, 2, 1]
+for i in 1...5 {
+var count = 0
+for number in numberArray {
+if number == i {
+count = count + 1
+}
+}
+print("\(i) occurs \(count) times")
+}
 
 //: [Next](@next)
